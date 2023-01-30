@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,10 +19,8 @@ Route::get('/', function () {
     return view('principal');
 });
 
-Route::get('/nosotros', function () {
-    return view('nosotros');
-});
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/register', [RegisterController::class, 'store'])->name('register');
 
-Route::get('/contacto', function () {
-    return view('contacto');
-});
+
+Route::get('/muro', [PostController::class, 'index'])->name('post.index');
