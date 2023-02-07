@@ -23,7 +23,11 @@
                           </svg>&nbsp;crear
                     </a>
 
-                    <a class="font-bold  text-gray-600 text-sm" href="{{ route('posts.index', [auth()->user()->username]) }}"><span class="font-normal">Hola&nbsp;{{ auth()->user()->username }}</span></a>
+                    <a class="font-bold  text-gray-600 text-sm" href="{{ route('posts.index', [auth()->user()->username]) }}">
+                        <span class="font-normal">
+                            Hola&nbsp;{{ auth()->user()->username }}
+                        </span>
+                    </a>
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                         <button type="submit" class="font-bold uppercase text-gray-600 text-sm" href="{{ route('logout') }}">Cerrar Sesión</button>

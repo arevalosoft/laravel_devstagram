@@ -42,4 +42,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /*
+     * Declaración de relaciones entre tablas.
+     * post -> one to many -> users
+     * ver User.php para visualizar la otra parte de la relación
+    */
+    public function posts() {
+        return $this->hasMany(Post::class);
+    }
 }
